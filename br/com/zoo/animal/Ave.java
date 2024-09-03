@@ -22,4 +22,14 @@ public class Ave extends Animal {
             System.out.println("Não pode voar");
         }
     }
+
+    @Override
+    public void emitirSom() {
+        System.out.println("Som de Ave");
+    }
+
+    @Override
+    public void mover() {
+        System.out.println("Ave movendo-se");
+    }
 }
