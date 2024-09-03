@@ -4,7 +4,7 @@ public class Mamifero extends Animal {
     private String corPelo;
     private int numeroSeios;
 
-    public Mamifero(String nome, int idade, int peso, String corPelo, int numeroSeios) {
+    public Mamifero(String nome, int idade, float peso, String corPelo, int numeroSeios) {
         super(nome, idade, peso);
         this.corPelo = corPelo;
         this.numeroSeios = numeroSeios;

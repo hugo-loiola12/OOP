@@ -3,9 +3,9 @@ package br.com.zoo.animal;
 public class Animal {
     private String nome;
     private int idade;
-    private int peso;
+    private float peso;
 
-    public Animal(String nome, int idade, int peso) {
+    public Animal(String nome, int idade, float peso) {
         super();
         this.nome = nome;
         this.idade = idade;

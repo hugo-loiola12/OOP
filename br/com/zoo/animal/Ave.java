@@ -5,7 +5,7 @@ public class Ave extends Animal {
     private String corDasPenas;
     private boolean podeVoar;
 
-    public Ave(String nome, int idade, int peso, String corDasPenas, boolean podeVoar) {
+    public Ave(String nome, int idade, float peso, String corDasPenas, boolean podeVoar) {
         super(nome, idade, peso);
         this.corDasPenas = corDasPenas;
         this.podeVoar = podeVoar;
