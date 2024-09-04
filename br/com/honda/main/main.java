@@ -1,7 +1,7 @@
-package honda.main;
+package br.com.honda.main;
 
-import honda.veiculo.carro;
-import honda.veiculo.moto;
+import br.com.honda.veiculo.carro;
+import br.com.honda.veiculo.moto;
 
 public class main {
     public static void main(String[] args) {

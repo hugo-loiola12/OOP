@@ -2,8 +2,8 @@ package br.com.zoo.animal;
 
 public class Ave extends Animal {
 
-    private String corDasPenas;
-    private boolean podeVoar;
+    private final String corDasPenas;
+    private final boolean podeVoar;
 
     public Ave(String nome, int idade, float peso, String corDasPenas, boolean podeVoar) {
         super(nome, idade, peso);
@@ -17,19 +17,19 @@ public class Ave extends Animal {
 
     public void setPodeVoar() {
         if (podeVoar) {
-            System.out.println("Pode voar");
+            System.out.println(nome + " Pode voar");
         } else {
-            System.out.println("Não pode voar");
+            System.out.println(nome + " Não pode voar");
         }
     }
 
     @Override
     public void emitirSom() {
-        System.out.println("Som de Ave");
+        System.out.println("Som de Ave " + nome);
     }
 
     @Override
     public void mover() {
-        System.out.println("Ave movendo-se");
+        System.out.println("Ave " + nome + " movendo-se");
     }
 }
