@@ -1,10 +1,10 @@
-package honda.veiculo;
+package br.com.honda.veiculo;
 
 public class veiculo {
     // Atributos da classe
-    private String marca;
-    private String modelo;
-    private String cor;
+    private final String marca;
+    private final String modelo;
+    private final String cor;
 
     // Construtores da classe
     public veiculo(String marca, String modelo, String cor) {

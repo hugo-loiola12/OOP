@@ -1,9 +1,9 @@
 package br.com.zoo.animal;
 
 public class Animal {
-    private String nome;
-    private int idade;
-    private float peso;
+    public final String nome;
+    public final int idade;
+    public final float peso;
 
     public Animal(String nome, int idade, float peso) {
         super();
@@ -13,10 +13,10 @@ public class Animal {
     }
 
     public void mover() {
-        System.out.println("Movendo-se");
+        System.out.println(nome + " Movendo-se");
     }
 
     public void emitirSom() {
-        System.out.println("Emitir Som");
+        System.out.println(nome + " Emitir Som");
     }
 }

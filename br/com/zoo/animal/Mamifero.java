@@ -1,8 +1,8 @@
 package br.com.zoo.animal;
 
 public class Mamifero extends Animal {
-    private String corPelo;
-    private int numeroSeios;
+    private final String corPelo;
+    private final int numeroSeios;
 
     public Mamifero(String nome, int idade, float peso, String corPelo, int numeroSeios) {
         super(nome, idade, peso);
@@ -11,7 +11,7 @@ public class Mamifero extends Animal {
     }
 
     public void getCorPelo() {
-        System.out.println("A cor de pelo é " + corPelo);
+        System.out.println("A cor de pelo é do " + nome + " é " + corPelo);
     }
 
     public void getNumeroSeios() {
@@ -20,11 +20,11 @@ public class Mamifero extends Animal {
 
     @Override
     public void emitirSom() {
-        System.out.println("Som de mamifero");
+        System.out.println("Som de mamifero " + nome);
     }
 
     @Override
     public void mover() {
-        System.out.println("Mamifero movendo-se");
+        System.out.println("Mamifero " + nome + " movendo-se");
     }
 }
