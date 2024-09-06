@@ -13,6 +13,17 @@ public class Mamifero extends Animal {
     }
 
     @Override
+    public void setIdade(int idade) {
+        if (idade < 0) {
+            System.out.println("ERRO: Idade negativa");
+        } else if (idade > 50) {
+            System.out.println("ERRO: Mamífero com idade maior que 50");
+        } else {
+            super.setIdade(idade);
+        }
+    }
+
+    @Override
     public void exibirInfo() {
         super.exibirInfo();
         System.out.println("Cor pelo: " + corPelo);

@@ -21,7 +21,7 @@ public class Animal {
         }
     }
 
-    public int getIdade(int idade) {
+    public int getIdade() {
         return idade;
     }
 
