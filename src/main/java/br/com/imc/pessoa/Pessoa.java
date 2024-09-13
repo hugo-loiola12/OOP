@@ -1,9 +1,9 @@
-package br.com.desafio3.pessoa;
+package br.com.imc.pessoa;
 
 public class Pessoa {
-    private final String nome;
-    private final double peso;
-    private final double altura;
+    protected String nome;
+    protected double peso;
+    protected double altura;
 
     public Pessoa(String nome, double peso, double altura) {
         super();
@@ -16,15 +16,27 @@ public class Pessoa {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public double getPeso() {
         return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     public double getAltura() {
         return altura;
     }
 
-    public double imcPessoa(double peso, double altura) {
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double imcPessoa() {
         double imc = 0;
         imc = peso / (altura * altura);
         return imc;
