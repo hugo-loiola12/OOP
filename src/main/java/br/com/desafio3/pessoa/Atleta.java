@@ -1,6 +1,6 @@
 package br.com.desafio3.pessoa;
 
-public class Atleta extends br.com.pessoa.Pessoa {
+public class Atleta extends Pessoa {
     private final String esportePraticado;
 
     public Atleta(String nome, double peso, double altura, String esportePraticado) {
@@ -8,8 +8,12 @@ public class Atleta extends br.com.pessoa.Pessoa {
         this.esportePraticado = esportePraticado;
     }
 
+    public String getEsportePraticado() {
+        return esportePraticado;
+    }
+
     @Override
-    public double imcPessoa(double peso, double altura) {
+    public double imcPessoa() {
         double imc = 0;
         imc = peso / (altura * altura);
         imc = imc - (imc * ((double) 5 / 100));

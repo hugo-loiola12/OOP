@@ -2,8 +2,8 @@ package br.com.desafio3.pessoa;
 
 public class Pessoa {
     private final String nome;
-    private final double peso;
-    private final double altura;
+    protected  double peso;
+    protected double altura;
 
     public Pessoa(String nome, double peso, double altura) {
         super();
@@ -24,7 +24,7 @@ public class Pessoa {
         return altura;
     }
 
-    public double imcPessoa(double peso, double altura) {
+    public double imcPessoa() {
         double imc = 0;
         imc = peso / (altura * altura);
         return imc;
