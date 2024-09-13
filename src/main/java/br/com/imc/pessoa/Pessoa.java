@@ -1,8 +1,8 @@
-package br.com.desafio3.pessoa;
+package br.com.imc.pessoa;
 
 public class Pessoa {
     protected String nome;
-    protected  double peso;
+    protected double peso;
     protected double altura;
 
     public Pessoa(String nome, double peso, double altura) {

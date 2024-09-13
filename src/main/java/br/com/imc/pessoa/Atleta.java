@@ -1,4 +1,4 @@
-package br.com.desafio3.pessoa;
+package br.com.imc.pessoa;
 
 public class Atleta extends Pessoa {
     private final String esportePraticado;
