@@ -1,7 +1,7 @@
-package br.com.desafio3.main;
+package br.com.imc.main;
 
-import br.com.desafio3.pessoa.Atleta;
-import br.com.desafio3.pessoa.Pessoa;
+import br.com.imc.pessoa.Atleta;
+import br.com.imc.pessoa.Pessoa;
 
 public class Main {
     public static void main(String[] args) {
