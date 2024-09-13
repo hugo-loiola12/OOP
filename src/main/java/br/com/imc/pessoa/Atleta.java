@@ -1,7 +1,7 @@
 package br.com.imc.pessoa;
 
 public class Atleta extends Pessoa {
-    private final String esportePraticado;
+    protected String esportePraticado;
 
     public Atleta(String nome, double peso, double altura, String esportePraticado) {
         super(nome, peso, altura);
@@ -10,6 +10,10 @@ public class Atleta extends Pessoa {
 
     public String getEsportePraticado() {
         return esportePraticado;
+    }
+
+    public void setEsportePraticado(String esportePraticado) {
+        this.esportePraticado = esportePraticado;
     }
 
     @Override
