@@ -1,7 +1,7 @@
 package br.com.desafio3.pessoa;
 
 public class Pessoa {
-    private final String nome;
+    protected String nome;
     protected  double peso;
     protected double altura;
 
