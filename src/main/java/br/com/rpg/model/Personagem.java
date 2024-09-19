@@ -38,7 +38,10 @@ public abstract class Personagem {
     }
 
     public void curar(int pontos) {
-        vida += pontos;
+
+        int curaPersonagem = vida + pontos;
+        // Garante que a nova vida não ultrapasse a vida máxima
+        vida = Math.min(vida, curaPersonagem);
         System.out.println(nome + " recuperou " + pontos + " pontos de vida. Vida atual: " + vida);
     }
 }
