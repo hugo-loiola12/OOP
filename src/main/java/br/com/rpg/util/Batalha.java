@@ -12,18 +12,25 @@ public class Batalha {
     }
 
     public void iniciarBatalha() {
+
+        System.out.println("------------------------------------------------------------------");
+        System.out.println(p1.getNome() + " iniciado com sucesso!");
         System.out.println("A batalha começou entre " + p1.getNome() + " e " + p2.getNome());
+        System.out.println("------------------------------------------------------------------");
 
         while (p1.estaVivo() && p2.estaVivo()) {
-            p1.atacar(p2);
-            if (p2.estaVivo()) {
-                p2.atacar(p1);
-            }
+            System.out.println("Coloque a sua opção: ");
+            System.out.println("1 - Atacar");
+            System.out.println("2 - Curar");
         }
 
         if (p1.estaVivo()) {
+
+            System.out.println("------------------------------------------------------------------");
             System.out.println(p1.getNome() + " venceu a batalha!");
         } else {
+
+            System.out.println("------------------------------------------------------------------");
             System.out.println(p2.getNome() + " venceu a batalha!");
         }
     }
