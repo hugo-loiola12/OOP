@@ -20,22 +20,23 @@ public class Game {
 
         String escolha = scanner.nextLine();
 
+
         switch (escolha) {
             case "1":
                 System.out.println("O personagem escolhido foi Zidane!");
-                personagemEscolhido = new Zidane("Zidane", 50, 25, 15, 5);
+                personagemEscolhido = new Zidane("Zidane", 150, 35, 25, 0);
                 break;
             case "2":
                 System.out.println("O personagem escolhido foi Garnet!");
-                personagemEscolhido = new Garnet("Garnet", 50, 25, 15, 5);
+                personagemEscolhido = new Garnet("Garnet", 120, 10, 15, 100);
                 break;
             case "3":
                 System.out.println("O personagem escolhido foi Vivi!");
-                personagemEscolhido = new Vivi("Vivi", 50, 25, 15, 5);
+                personagemEscolhido = new Vivi("Vivi", 100, 5, 10, 150);
                 break;
             case "4":
                 System.out.println("O personagem escolhido foi Steiner!");
-                personagemEscolhido = new Steiner("Steiner", 50, 25, 15, 5);
+                personagemEscolhido = new Steiner("Steiner", 200, 45, 40, 0);
                 break;
             default:
                 System.out.println("ERRO: Escolha uma classe válida!");
@@ -48,6 +49,7 @@ public class Game {
             System.out.println("Vida: " + personagemEscolhido.getVida());
             System.out.println("Ataque: " + personagemEscolhido.getAtaque());
             System.out.println("Defesa: " + personagemEscolhido.getDefesa());
+            System.out.println("Mana: " + personagemEscolhido.getMagia());
         }
     }
 }
