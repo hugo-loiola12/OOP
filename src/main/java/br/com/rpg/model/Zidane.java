@@ -9,7 +9,8 @@ public class Zidane extends Personagem {
     }
 
     @Override
-    public void atacar(Personagem outro) {
-
+    public void atacar(Personagem alvo) {
+        System.out.println(nome + " ataca com suas adagas!");
+        
     }
 }

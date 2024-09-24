@@ -7,7 +7,8 @@ public class Steiner extends Personagem {
     }
 
     @Override
-    public void atacar(Personagem outro) {
-
+    public void atacar(Personagem alvo) {
+        System.out.println(nome + " ataca com sua espada!");
+        // Implementar a lógica do ataque aqui
     }
 }

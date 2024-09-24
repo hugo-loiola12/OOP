@@ -82,7 +82,7 @@ public abstract class Personagem {
 
     }
 
-    // Novo método curar
+    // Metodo para curar o personagem
     public void curar(int pontos) {
         vida = Math.min(vida + pontos, vidaMaxima);  // Garante que a vida não ultrapasse a vida máxima
         System.out.println(nome + " recuperou " + pontos + " pontos de vida! Vida atual: " + vida);
