@@ -20,6 +20,9 @@ public abstract class Personagem {
         this.mana = mana;
     }
 
+    // Personagem ataca o alvo
+    public abstract void atacar(Personagem alvo);
+    
     // Getters e Setter gerados
     public String getNome() {
         return nome;
@@ -66,20 +69,12 @@ public abstract class Personagem {
         return vida > 0;
     }
 
-    // Personagem ataca o alvo
-    public abstract void atacar(Personagem alvo);
-
     public void receberDano(int dano) {
         // Dano recebido não ser negativo
         int danoRecebido = Math.max(dano - defesa, 0);
         // Atualizar a vida apos o dano recebido
         vida -= danoRecebido;
         // Se o dano for maior que a vida, o personagem morre
-        if (estaVivo()) {
-            System.out.println(nome + " recebeu " + danoRecebido + " de dano e ainda está vivo! Vida restante: " + vida);
-        } else {
-            System.out.println(nome + " está morto :(");
-        }
 
 
     }
@@ -87,6 +82,5 @@ public abstract class Personagem {
     // Metodo para curar o personagem
     public void curar(int pontos) {
         vida = Math.min(vida + pontos, vidaMaxima);  // Garante que a vida não ultrapasse a vida máxima
-        System.out.println(nome + " recuperou " + pontos + " pontos de vida! Vida atual: " + vida);
     }
 }

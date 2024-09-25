@@ -7,6 +7,6 @@ public class DadoD20 {
 
     // Rola o dado de 20 faces para saber o resultado do ataque/cura
     public static int rolar() {
-        return random.nextInt(20) + 1;  // Retorna um valor entre 1 e 'faces'
+        return random.nextInt(20) + 1;  // Retorna um valor entre 1 e 20
     }
 }

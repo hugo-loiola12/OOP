@@ -13,8 +13,12 @@ public class Zidane extends Personagem {
     @Override
     public void atacar(Personagem alvo) {
         int dado = DadoD20.rolar();
-        int defesaAlvo = (alvo.getDefesa() * dado) / 10;
-        int ataqueZidane = (ataque * defesaAlvo) / 10;
+        if (dado == 1) {
+            System.out.println("Dano Mínimo!");
+        } else if (dado == 20) {
+            System.out.println("Dano Crítico!");
+        }
+        int ataqueZidane = (ataque * alvo.getDefesa()) / 10;
         alvo.receberDano(ataqueZidane);
         System.out.println(nome + " ataca com suas adagas " + alvo.getNome() + " com um ataque de " + ataqueZidane);
 

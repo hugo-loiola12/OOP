@@ -2,6 +2,7 @@ package br.com.rpg.util;
 
 import br.com.rpg.model.Personagem;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Batalha {
@@ -16,39 +17,78 @@ public class Batalha {
 
     public void iniciarBatalha() {
         Scanner scanner = new Scanner(System.in);
-
+        Random random = new Random();  // Para decisões aleatórias de p2
 
         System.out.println("-------------- Batalha iniciada! --------------");
         System.out.println();
-        System.out.println("A batalha começou entre " + p1.getNome() + " e " + p2.getNome());
+        System.out.println(" A batalha começou entre " + p1.getNome() + " e " + p2.getNome());
+        System.out.println();
         System.out.println("------------------------------------------------");
-        // While que roda até um dos personagens morrer, ou fugir
-        do {
-            System.out.println("Escolha:");
-            System.out.println("1 - Atacar");
-            System.out.println("2 - Curar");
-            System.out.println("3 - Fugir");
-            int escolha = scanner.nextInt();
 
-            if (escolha == 1) {
-                System.out.println(p1.getNome() + " atacou " + p2.getNome());
-                p1.atacar(p2);
-            } else if (escolha == 2) {
-                p1.curar(30);
-                System.out.println(p1.getNome() + " se curou!");
-            } else if (escolha == 3) {
-                System.out.println(p1.getNome() + " conseguiu fugir!");
-                return;
+        boolean turnoP1 = true;  // Inicia com o turno do p1
+        int cura = random.nextInt(30); // Curar até 30 pontos;
+
+        // Enquanto os dois personagens estiverem vivos, a batalha continua
+        while (p1.estaVivo() && p2.estaVivo()) {
+            if (turnoP1) {
+                // Turno do jogador (p1)
+                System.out.println(p1.getNome() + ", é o seu turno!");
+                System.out.println("Escolha:");
+                System.out.println("1 - Atacar");
+                System.out.println("2 - Curar");
+                System.out.println("3 - Fugir");
+                int escolha = scanner.nextInt();
+
+                switch (escolha) {
+                    case 1:
+                        p1.atacar(p2);
+                        break;
+                    case 2:
+                        p1.curar(cura);
+                        System.out.println(p2.getNome() + " se curou com " + cura + " !");
+                        break;
+                    case 3:
+                        System.out.println(p1.getNome() + " conseguiu fugir!");
+                        return;  // Termina a batalha
+                    default:
+                        System.out.println("Opção inválida. Perdeu o turno.");
+                        break;
+                }
+            } else {
+                // Turno do adversário (p2)
+                System.out.println(p2.getNome() + " está se preparando...");
+
+                // Decisão simples: p2 pode atacar ou curar
+                int acaoP2 = random.nextInt(2); // 0 = atacar, 1 = curar
+
+                switch (acaoP2) {
+                    case 0:
+                        p2.atacar(p1);
+                        break;
+                    case 1:
+                        p2.curar(cura);
+                        System.out.println(p2.getNome() + " se curou com " + cura + "!");
+                        break;
+                    default:
+                        System.out.println(p2.getNome() + " falhou em sua ação!");
+                        break;
+                }
             }
 
-        } while (p1.estaVivo() && p2.estaVivo());
+            // Alterna o turno
+            turnoP1 = !turnoP1;
 
+            // Mostra a vida dos dois personagens após cada turno
+            System.out.println(p1.getNome() + " - Vida: " + p1.getVida());
+            System.out.println(p2.getNome() + " - Vida: " + p2.getVida());
+            System.out.println("------------------------------------------------");
+        }
+
+        // Verifica o resultado final da batalha
         if (p1.estaVivo()) {
-
             System.out.println("------------------------------------------------------------------");
             System.out.println(p1.getNome() + " venceu a batalha!");
         } else {
-
             System.out.println("------------------------------------------------------------------");
             System.out.println(p2.getNome() + " venceu a batalha!");
         }
