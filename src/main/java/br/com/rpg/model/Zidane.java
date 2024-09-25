@@ -1,16 +1,22 @@
 package br.com.rpg.model;
 
+import br.com.rpg.util.DadoD20;
+
 public class Zidane extends Personagem {
 
 
-    public Zidane(String nome, int vida, int ataque, int defesa, int magia) {
-        super(nome, vida, ataque, defesa, magia);
+    public Zidane(String nome, int vida, int ataque, int defesa, int mana) {
+        super(nome, vida, ataque, defesa, mana);
 
     }
 
     @Override
     public void atacar(Personagem alvo) {
-        System.out.println(nome + " ataca com suas adagas!");
-        
+        int dado = DadoD20.rolar();
+        int defesaAlvo = (alvo.getDefesa() * dado) / 10;
+        int ataqueZidane = (ataque * defesaAlvo) / 10;
+        alvo.receberDano(ataqueZidane);
+        System.out.println(nome + " ataca com suas adagas " + alvo.getNome() + " com um ataque de " + ataqueZidane);
+
     }
 }

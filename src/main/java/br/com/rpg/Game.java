@@ -1,10 +1,13 @@
 package br.com.rpg;
 
 import br.com.rpg.model.*;
+import br.com.rpg.util.Batalha;
 
 import java.util.Scanner;
 
 public class Game {
+
+
     public static void main(String[] args) {
         System.out.println("-------------- Final Fantasy IX --------------");
         System.out.println();
@@ -13,7 +16,7 @@ public class Game {
         System.out.println("2 - Garnet");
         System.out.println("3 - Vivi");
         System.out.println("4 - Steiner");
-        // Scanner para o usuario colocar um número
+        // Scanner para o usuário colocar um número
         Scanner scanner = new Scanner(System.in);
         // Saber qual personagem foi escolhido pelo usuário
         Personagem personagemEscolhido = null;
@@ -49,7 +52,14 @@ public class Game {
             System.out.println("Vida: " + personagemEscolhido.getVida());
             System.out.println("Ataque: " + personagemEscolhido.getAtaque());
             System.out.println("Defesa: " + personagemEscolhido.getDefesa());
-            System.out.println("Mana: " + personagemEscolhido.getMagia());
+            System.out.println("Mana: " + personagemEscolhido.getMana());
         }
+
+        // Inicializar Inimigo
+        Inimigo inimigo = new Inimigo("Ronaldo", 500, 12, 20, 20);
+
+        // Batalha
+        Batalha luta = new Batalha(personagemEscolhido, inimigo);
+        luta.iniciarBatalha();
     }
 }

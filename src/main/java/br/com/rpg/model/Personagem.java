@@ -7,17 +7,17 @@ public abstract class Personagem {
     protected int vidaMaxima;
     protected int ataque;
     protected int defesa;
-    protected int magia;
+    protected int mana;
 
     // Construtor do Personagem
-    public Personagem(String nome, int vida, int ataque, int defesa, int magia) {
+    public Personagem(String nome, int vida, int ataque, int defesa, int mana) {
         super();
         this.nome = nome;
         this.vida = vida;
         this.vidaMaxima = vida;
         this.ataque = ataque;
         this.defesa = defesa;
-        this.magia = magia;
+        this.mana = mana;
     }
 
     // Getters e Setter gerados
@@ -53,12 +53,12 @@ public abstract class Personagem {
         this.defesa = defesa;
     }
 
-    public int getMagia() {
-        return magia;
+    public int getMana() {
+        return mana;
     }
 
-    public void setMagia(int magia) {
-        this.magia = magia;
+    public void setMagia(int mana) {
+        this.mana = mana;
     }
 
     // Verificar se o personagem está vivo
@@ -77,8 +77,10 @@ public abstract class Personagem {
         // Se o dano for maior que a vida, o personagem morre
         if (estaVivo()) {
             System.out.println(nome + " recebeu " + danoRecebido + " de dano e ainda está vivo! Vida restante: " + vida);
+        } else {
+            System.out.println(nome + " está morto :(");
         }
-        System.out.println(nome + "está morto :(");
+
 
     }
 
