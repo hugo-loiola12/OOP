@@ -44,10 +44,10 @@ batalha.iniciarBatalha();
 
 ### Recursos adicionais
 
-- [Documentação Oficial do Java](!https://docs.oracle.com/javase/8/docs/api/)
-- [Documentação Eclipse](!https://help.eclipse.org/2024-09/index.jsp)
-- [Documentação IntelliJ IDEA](!https://www.jetbrains.com/idea/resources/)
+- [Documentação Oficial do Java](https://docs.oracle.com/javase/8/docs/api/)
+- [Documentação Eclipse](https://help.eclipse.org/2024-09/index.jsp)
+- [Documentação IntelliJ IDEA](https://www.jetbrains.com/idea/resources/)
 
 ### Licença
 
-Este projeto está licenciado sob a [MIT License](!https://opensource.org/license/mit).
+Este projeto está licenciado sob a [MIT License](https://opensource.org/license/mit).
