@@ -26,10 +26,11 @@ public class Batalha {
         System.out.println("------------------------------------------------");
 
         boolean turnoP1 = true;  // Inicia com o turno do p1
-        int cura = random.nextInt(30); // Curar até 30 pontos;
+
 
         // Enquanto os dois personagens estiverem vivos, a batalha continua
         while (p1.estaVivo() && p2.estaVivo()) {
+            int cura = random.nextInt(30); // Curar até 30 pontos
             if (turnoP1) {
                 // Turno do jogador (p1)
                 System.out.println(p1.getNome() + ", é o seu turno!");
@@ -45,10 +46,8 @@ public class Batalha {
                         break;
                     case 2:
                         p1.curar(cura);
-                        System.out.println(p2.getNome() + " se curou com " + cura + " !");
                         break;
                     case 3:
-                        System.out.println(p1.getNome() + " conseguiu fugir!");
                         return;  // Termina a batalha
                     default:
                         System.out.println("Opção inválida. Perdeu o turno.");
@@ -58,16 +57,17 @@ public class Batalha {
                 // Turno do adversário (p2)
                 System.out.println(p2.getNome() + " está se preparando...");
 
-                // Decisão simples: p2 pode atacar ou curar
-                int acaoP2 = random.nextInt(2); // 0 = atacar, 1 = curar
+                // Ajuste para que o inimigo ataque mais do que cure
+                int acaoP2 = random.nextInt(4); // 0, 1, 2 = atacar, 3 = curar
 
                 switch (acaoP2) {
                     case 0:
-                        p2.atacar(p1);
-                        break;
                     case 1:
-                        p2.curar(cura);
-                        System.out.println(p2.getNome() + " se curou com " + cura + "!");
+                    case 2:
+                        p2.atacar(p1);  // 75% de chance de atacar
+                        break;
+                    case 3:
+                        p2.curar(cura);  // 25% de chance de curar
                         break;
                     default:
                         System.out.println(p2.getNome() + " falhou em sua ação!");
@@ -75,13 +75,13 @@ public class Batalha {
                 }
             }
 
-            // Alterna o turno
-            turnoP1 = !turnoP1;
-
             // Mostra a vida dos dois personagens após cada turno
             System.out.println(p1.getNome() + " - Vida: " + p1.getVida());
             System.out.println(p2.getNome() + " - Vida: " + p2.getVida());
             System.out.println("------------------------------------------------");
+
+            // Alterna o turno
+            turnoP1 = !turnoP1;
         }
 
         // Verifica o resultado da batalha

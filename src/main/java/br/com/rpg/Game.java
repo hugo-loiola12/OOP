@@ -27,7 +27,7 @@ public class Game {
         switch (escolha) {
             case "1":
                 System.out.println("O personagem escolhido foi Zidane!");
-                personagemEscolhido = new Zidane("Zidane", 150, 35, 25, 0);
+                personagemEscolhido = new Zidane("Zidane", 150, 50, 25, 0);
                 break;
             case "2":
                 System.out.println("O personagem escolhido foi Garnet!");
@@ -39,7 +39,7 @@ public class Game {
                 break;
             case "4":
                 System.out.println("O personagem escolhido foi Steiner!");
-                personagemEscolhido = new Steiner("Steiner", 200, 45, 40, 0);
+                personagemEscolhido = new Steiner("Steiner", 200, 35, 40, 0);
                 break;
             default:
                 System.out.println("ERRO: Escolha uma classe válida!");
@@ -56,10 +56,10 @@ public class Game {
         }
 
         // Inicializar Inimigo
-        Inimigo inimigo = new Inimigo("Ronaldo", 500, 12, 20, 20);
+        Inimigo inimigo = new Inimigo("Ronaldo", 250, 50, 20, 20);
 
         // Batalha
-        Batalha luta = new Batalha(personagemEscolhido, inimigo);
-        luta.iniciarBatalha();
+        Batalha FinalFantasy9 = new Batalha(personagemEscolhido, inimigo);
+        FinalFantasy9.iniciarBatalha();
     }
 }

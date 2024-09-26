@@ -8,6 +8,7 @@ public abstract class Personagem {
     protected int ataque;
     protected int defesa;
     protected int mana;
+    private int curasRestantes = 3;  // Cada personagem pode curar 3 vezes no máximo
 
     // Construtor do Personagem
     public Personagem(String nome, int vida, int ataque, int defesa, int mana) {
@@ -22,7 +23,7 @@ public abstract class Personagem {
 
     // Personagem ataca o alvo
     public abstract void atacar(Personagem alvo);
-    
+
     // Getters e Setter gerados
     public String getNome() {
         return nome;
@@ -70,17 +71,35 @@ public abstract class Personagem {
     }
 
     public void receberDano(int dano) {
-        // Dano recebido não ser negativo
+        // Calcula o dano recebido considerando a defesa, garantindo que não seja negativo
         int danoRecebido = Math.max(dano - defesa, 0);
-        // Atualizar a vida apos o dano recebido
-        vida -= danoRecebido;
-        // Se o dano for maior que a vida, o personagem morre
 
+        // Atualiza a vida, garantindo que ela não fique abaixo de zero
+        vida = Math.max(vida - danoRecebido, 0);
 
+        // Imprime o dano recebido e a vida restante
+        System.out.println(nome + " recebeu " + danoRecebido + " de dano.");
+
+        // Verifica se o personagem continua vivo
+        if (vida == 0) {
+            System.out.println(nome + " foi derrotado!");
+        }
     }
 
-    // Metodo para curar o personagem
+
+    // Metodo para curar, considerando o limite de usos
     public void curar(int pontos) {
-        vida = Math.min(vida + pontos, vidaMaxima);  // Garante que a vida não ultrapasse a vida máxima
+        if (curasRestantes > 0) {
+            int curaPersonagem = vida + pontos;
+            // Garante que a nova vida não ultrapasse a vida máxima (ou define um valor para a vida máxima)
+            vida = Math.min(curaPersonagem, vidaMaxima());
+            curasRestantes--;  // Reduz o número de curas restantes
+            System.out.println(nome + " se curou com " + pontos + " pontos de vida. Vida atual: " + vida + ". Curas restantes: " + curasRestantes);
+        } else {
+            System.out.println(nome + " não pode mais se curar! Limite de curas alcançado.");
+        }
     }
+
+    // Método abstrato que retorna a vida máxima de cada personagem
+    public abstract int vidaMaxima();
 }
