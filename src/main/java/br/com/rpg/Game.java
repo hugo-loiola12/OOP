@@ -1,7 +1,7 @@
 package br.com.rpg;
 
+import br.com.rpg.battle.Batalha;
 import br.com.rpg.model.*;
-import br.com.rpg.util.Batalha;
 
 import java.util.Scanner;
 
