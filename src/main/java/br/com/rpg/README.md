@@ -1,5 +1,5 @@
 
-## README - Jogo de RPG Simples em Java
+# Jogo de RPG Simples em Java
 
 ### Descrição
 Este é um projeto de um jogo de RPG simples desenvolvido em Java, onde o jogador pode escolher entre diferentes personagens de *Final Fantasy IX* e lutar contra inimigos. O sistema de batalha é baseado em turnos e inclui mecânicas de ataque, cura limitada e uma lógica de batalha aleatória para o inimigo.
@@ -108,10 +108,6 @@ if (turnoP1) {
 3. **Escolha do Personagem**:
    Quando o jogo iniciar, escolha seu personagem e siga as instruções do console para jogar.
 
-### Melhorias Futuras
-- Adicionar mais tipos de personagens e inimigos.
-- Implementar diferentes habilidades especiais para os personagens.
-- Melhorar o sistema de inteligência artificial do inimigo.
 
 ### Conclusão
 Este projeto demonstra como implementar um jogo de RPG básico com conceitos de POO como herança, polimorfismo, encapsulamento e aleatoriedade usando Java. A estrutura modular permite a fácil extensão com novos personagens, habilidades e inimigos.
