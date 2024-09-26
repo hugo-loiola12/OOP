@@ -84,7 +84,7 @@ public class Batalha {
             System.out.println("------------------------------------------------");
         }
 
-        // Verifica o resultado final da batalha
+        // Verifica o resultado da batalha
         if (p1.estaVivo()) {
             System.out.println("------------------------------------------------------------------");
             System.out.println(p1.getNome() + " venceu a batalha!");

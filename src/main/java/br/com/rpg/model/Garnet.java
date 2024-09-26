@@ -1,5 +1,7 @@
 package br.com.rpg.model;
 
+import br.com.rpg.util.DadoD20;
+
 public class Garnet extends Personagem {
 
     public Garnet(String nome, int vida, int ataque, int defesa, int mana) {
@@ -8,7 +10,14 @@ public class Garnet extends Personagem {
 
     @Override
     public void atacar(Personagem alvo) {
-        System.out.println(nome + " usa magia branca!");
-        // Implementar a lógica do ataque/cura aqui
+        int dado = DadoD20.rolar();
+        if (dado == 1) {
+            System.out.println("Dano Mínimo!");
+        } else if (dado == 20) {
+            System.out.println("Dano Crítico!");
+        }
+        int ataqueGarnet = (mana * alvo.getDefesa()) / 10;
+        alvo.receberDano(ataqueGarnet);
+        System.out.println(nome + " lança magia branca em " + alvo.getNome() + " com um ataque de " + ataqueGarnet);
     }
 }
