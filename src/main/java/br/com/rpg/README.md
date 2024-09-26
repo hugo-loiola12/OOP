@@ -24,3 +24,5 @@
 5. **Classe Utilitária `Dado`**:
     - A classe `Dado` simula a aleatoriedade de um jogo de RPG, utilizando o método `rolar(int faces)` para gerar
       valores aleatórios, como dano ou chance de acerto.
+
+Feito por [Hugo Loiola](!https://github.com/hugo-loiola12) 
