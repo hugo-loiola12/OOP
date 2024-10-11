@@ -1,7 +1,9 @@
 package br.com.transporte.tipos;
 
 
-public class Onibus extends MeioTransporte {
+import br.com.transporte.contrato.Transporte;
+
+public class Onibus extends MeioTransporte implements Transporte {
 
 
     public Onibus(int velocidade, int peso, int numeroPassageiros) {

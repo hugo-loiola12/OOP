@@ -1,6 +1,8 @@
 package br.com.transporte.tipos;
 
-public class Carro extends MeioTransporte {
+import br.com.transporte.contrato.Transporte;
+
+public class Carro extends MeioTransporte implements Transporte {
 
 
     public Carro(int velocidade, int peso, int numeroPassageiros) {
