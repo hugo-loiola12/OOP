@@ -1,4 +1,4 @@
-package br.com.transporte.transporte;
+package br.com.transporte.contrato;
 
 public interface Transporte {
 

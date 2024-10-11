@@ -1,12 +1,15 @@
 package br.com.transporte.tipos;
 
-import br.com.transporte.transporte.Transporte;
+public class Carro extends MeioTransporte {
 
-public class Carro implements Transporte {
+
+    public Carro(int velocidade, int peso, int numeroPassageiros) {
+        super(velocidade, peso, numeroPassageiros);
+    }
 
 
     @Override
     public void mover() {
-        System.out.println("O carro está se movendo pelas estraadas.");
+        System.out.println("O carro está se movendo pela rota urbana à " + velocidade + "km/h com " + numeroPassageiros + " passageiros.");
     }
 }
