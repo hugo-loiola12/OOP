@@ -1,4 +1,6 @@
 package br.com.pagamento.tipo;
 
-public class PagamentoCartao {
+import br.com.pagamento.contrato.Pagamento;
+
+public class PagamentoCartao implements Pagamento {
 }
