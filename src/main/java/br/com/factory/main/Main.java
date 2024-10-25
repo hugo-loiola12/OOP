@@ -8,12 +8,12 @@ public class Main {
     public static void main(String[] args) {
         VeiculoFactory fabrica = new VeiculoFactory();
 
-        Moto moto = (Moto) fabrica.criarVeiculo("moto", "CB650R", 50000);
-        System.out.println("Nome: " + moto.getNome());
+        Moto moto = (Moto) fabrica.criarVeiculo("moto", "CB650R", 56500.90f);
+        System.out.println("Nome: " + moto.getNome() + " Preço: " + moto.getPreco());
         moto.ligar();
 
-        Carro carro = (Carro) fabrica.criarVeiculo("carro", "Civic", 110000);
-        System.out.println("Nome: " + carro.getNome());
+        Carro carro = (Carro) fabrica.criarVeiculo("carro", "Civic", 101500.50f);
+        System.out.println("Nome: " + carro.getNome() + " Preço: " + carro.getPreco());
         moto.ligar();
 
     }
